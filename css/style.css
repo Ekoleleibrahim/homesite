@@ -25,6 +25,12 @@ a{
 ul{
     list-style-type: none;
 }
+h1{
+    font-family: 'Cuprum', sans-serif;
+}
+p{
+    font-size: 0.875rem;
+}
 .flex{
     display: flex;
     align-items: center;
@@ -93,6 +99,15 @@ header .flex-nav-menu a::before{
 header .flex-nav-menu a:hover::before{
     transform: scaleX(1);
 }
+header .contact-btn{
+    display: none;
+}
+header .contact-btn a{
+    border: 1px solid var(--white);
+}
+header .contact-btn a::before{
+    content: none;
+}
 header .flex-contact-wa{
     gap: 15px;
 }
@@ -110,22 +125,44 @@ header .flex-contact-wa p{
     color: var(--chocolat);
     font-size: 0.875rem;
 }
-header .flex-contact-wa a{
+header .flex-contact-wa a,
+header .contact-btn a{
+    font-size: 0.875rem;
     background-color: var(--chocolat);
-    color: var(--white);
+    color: var(--white) !important;
     padding: 10px 12px;
     border-radius: 6px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
-header .flex-contact-wa a:hover{
+header .flex-contact-wa a:hover,
+header .contact-btn a:hover{
     background-color: var(--chocolat_fort);
+}
+
+#burger-menu{
+    position: relative;
+    background-color: transparent;
+    display: none;
+}
+#burger-menu svg{
+    width: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.close{
+    display: none;
+}
+.open{
+    display: inline-block;
 }
 
 /* BANNIERE SITE */
 #banniere{
     width: 100%;
-    height: 85vh;
-    background: url(../assets/images/home-banniere.jpg);
+    height: 600px;
+    background: url(../assets/images/home-banniere.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100% 100%;
@@ -146,7 +183,7 @@ header .flex-contact-wa a:hover{
 #section-presentation{
     padding: 100px 50px;
     position: relative;
-    z-index: 5000;
+    z-index: 200;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,16 +218,24 @@ header .flex-contact-wa a:hover{
     /* ENTETE DU SITE */
     header{
         position: relative;
-        padding-inline-start: 20px;
+        padding-inline: 24px;
     }
     .menu-responsive{
-        display: none;
+        display: block;
         position: absolute;
+        z-index: 5000;
         left: 0;
         top: 100%;
         width: 100%;
+        height: 350px;
         background-color: var(--chocolat);
-        padding-block: 20px;
+        padding-block: 40px;
+        transform: scaleY(0);
+        transform-origin: 50% top;
+        transition: transform 300ms linear;
+    }
+    .openMenu{
+        transform: scaleY(1);
     }
     .flex-nav-menu{
         flex-direction: column;
@@ -202,6 +247,21 @@ header .flex-contact-wa a:hover{
     header .flex-nav-menu a::before{
         background-color: var(--white);
     }
+    header .flex-contact-wa .display-none,
+    header .flex-contact-wa div{
+        display: none;
+    }
+    header .contact-btn{
+        display: inline-block;
+    }
+
+    #burger-menu{
+        position: relative;
+        background-color: transparent;
+        display: inline-block;
+        cursor: pointer;
+    }
+
 
     /* SECTION PRESENTATION */
     #section-presentation{
