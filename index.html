@@ -34,6 +34,9 @@
                         <li>
                             <a href="#">Contact</a>
                         </li>
+                        <li class="contact-btn">
+                            <a href="#">Contactez-nous</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -45,9 +48,18 @@
                     <div class="watsapp">WatsApp</div>
                     <p>+243 000 00 00 00</p>
                 </div>
-                <div>
+                <div class="display-none">
                     <a href="#">Contactez-nous</a>
                 </div>
+                <button id="burger-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+
+                </button>
             </div>
         </header>
     <!-- ENTETE DU SITE -->
@@ -66,5 +78,32 @@
             </section>
         </div>
     </main>
+
+
+
+
+    <!-- Script pour menu burger -->
+     <script>
+        const svg1 = document.querySelector("#burger-menu svg:nth-child(1)");
+        const svg2 = document.querySelector("#burger-menu svg:nth-child(2)");
+        svg2.classList.add("close");
+        const burgerMenu = document.getElementById("burger-menu");
+        const menuResponsive = document.querySelector(".menu-responsive");
+
+        // Ouvrir et Fermer le Menu
+        function openAndCloseMenu () {
+            burgerMenu.addEventListener("click", () => {
+                svg1.classList.toggle("close");
+                svg2.classList.toggle("open");
+                menuResponsive.classList.toggle("openMenu");
+            })
+        }
+        
+        try {
+            openAndCloseMenu();
+        } catch {
+            console.log("Désolé, il se passe un problème au menu");
+        }
+     </script>
 </body>
 </html>
