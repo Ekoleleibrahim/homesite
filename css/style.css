@@ -18,6 +18,10 @@ body{
 }
 
 /* STYLE GENERALE */
+img{
+    width: 100%;
+    object-fit: cover;
+}
 a{
     display: inline-block;
     text-decoration: none;
@@ -26,6 +30,7 @@ ul{
     list-style-type: none;
 }
 h1{
+    font-size: 2.1875rem;
     font-family: 'Cuprum', sans-serif;
 }
 p{
@@ -35,9 +40,12 @@ p{
     display: flex;
     align-items: center;
 }
+.grid{
+    display: grid;
+}
 
 /* ENTETE DU SITE */
-header{
+#main-header{
     padding: 20px 40px;
     background-color: var(--white);
     display: flex;
@@ -47,12 +55,13 @@ header{
 }
 
 header .title{
+    font-size: 1.375rem;
     color: var(--chocolat);
 }
-header .title span{
+#main-header .title span{
     display: block;
 }
-header .title span:nth-child(1)::after{
+#main-header .title span:nth-child(1)::after{
     content: '';
     display: inline-block;
     width: 40px;
@@ -60,30 +69,29 @@ header .title span:nth-child(1)::after{
     background-color: var(--chocolat);
     mask-image: linear-gradient(to left, transparent, black);
 }
-header .title span:nth-child(1){
+#main-header .title span:nth-child(1){
     font-size: 1.0625rem;
     letter-spacing: 5px;
     font-family: 'Cuprum', sans-serif;
 }
-header .title span:nth-child(2){
-    font-size: 1.375rem;
+#main-header .title span:nth-child(2){
     font-weight: 700;
 }
-header .title span:nth-child(3){
+#main-header .title span:nth-child(3){
     font-size: 0.875rem;
     letter-spacing: 4px;
     font-family: 'Cuprum', sans-serif;
 }
-header .flex-nav-menu{
+#main-header .flex-nav-menu{
     gap: 20px;
 }
-header .flex-nav-menu a{
+#main-header .flex-nav-menu a{
     color: var(--chocolat);
     font-size: 1.0625rem;
     font-weight: 500;
     position: relative;
 }
-header .flex-nav-menu a::before{
+#main-header .flex-nav-menu a::before{
     content: '';
     display: inline-block;
     width: 100%;
@@ -96,37 +104,37 @@ header .flex-nav-menu a::before{
     transform-origin: left 50%;
     transition: transform 300ms ease;
 }
-header .flex-nav-menu a:hover::before{
+#main-header .flex-nav-menu a:hover::before{
     transform: scaleX(1);
 }
-header .contact-btn{
+#main-header .contact-btn{
     display: none;
 }
-header .contact-btn a{
+#main-header .contact-btn a{
     border: 1px solid var(--white);
 }
-header .contact-btn a::before{
+#main-header .contact-btn a::before{
     content: none;
 }
-header .flex-contact-wa{
+#main-header .flex-contact-wa{
     gap: 15px;
 }
-header .flex-contact-wa img{
+#main-header .flex-contact-wa img{
     padding: 5px;
     object-fit: cover;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
 }
-header .flex-contact-wa div.watsapp{
+#main-header .flex-contact-wa div.watsapp{
     font-weight: 500;
     margin-bottom: 4px;
 }
-header .flex-contact-wa p{
+#main-header .flex-contact-wa p{
     color: var(--chocolat);
     font-size: 0.875rem;
 }
-header .flex-contact-wa a,
-header .contact-btn a{
+#main-header .flex-contact-wa a,
+#main-header .contact-btn a{
     font-size: 0.875rem;
     background-color: var(--chocolat);
     color: var(--white) !important;
@@ -134,14 +142,15 @@ header .contact-btn a{
     border-radius: 6px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
-header .flex-contact-wa a:hover,
-header .contact-btn a:hover{
+#main-header .flex-contact-wa a:hover,
+#main-header .contact-btn a:hover{
     background-color: var(--chocolat_fort);
 }
 
 #burger-menu{
     position: relative;
     background-color: transparent;
+    border: none;
     display: none;
 }
 #burger-menu svg{
@@ -213,6 +222,85 @@ header .contact-btn a:hover{
     background-color: var(--chocolat_fort);
 }
 
+/* SECTION ONE */
+#section-one{
+    padding: 100px 100px;
+    background-color: var(--white);
+}
+#section-one .grid-section-one{
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+}
+#section-one .grid-section-one .content-section-grid{
+    margin-top: 100px;
+    max-width: 550px;
+    width: 100%;
+}
+#section-one .grid-section-one .content-section-grid .title{
+    margin-bottom: 4px;
+    color: var(--black);
+}
+#section-one .grid-section-one .content-section-grid h1{
+    margin-bottom: 20px;
+}
+#section-one .grid-section-one .content-section-grid .ctn-btn{
+    margin-top: 20px;
+}
+#section-one .grid-section-one .content-section-grid .ctn-btn a{
+    background-color: var(--chocolat);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 999px;
+}
+#section-one .grid-section-one .content-section-grid .ctn-btn a:hover{
+    background-color: var(--chocolat_fort);
+}
+#section-one img:first-of-type{
+    width: 400px;
+    aspect-ratio: 3/3;
+    position: relative;
+    left: 10%;
+}
+#section-one .relative{
+    position: relative;
+    top: -100px;
+    left: -10%;
+}
+#section-one .relative img:last-of-type{
+    display: inline-block;
+    width: 400px;
+    aspect-ratio: 4/2;
+    border: 12px solid var(--white);
+}
+
+
+@media screen and (max-width: 1024px) {
+     /* SECTION ONE */
+    #section-one{
+        padding: 100px 24px;
+        background-color: var(--white);
+    }
+    #section-one .grid-section-one .content-section-grid{
+        margin-top: 0px;
+        max-width: 550px;
+        width: 100%;
+    }   
+    #section-one .relative{
+        position: relative;
+        top: -100px;
+        left: 0;
+    }
+    #section-one .relative img:last-of-type{
+        width: 100%;
+        aspect-ratio: 4/2;
+        border: 12px solid var(--white);
+    }
+    #section-one .grid-section-one img{
+        width: 100%;
+        left: 0;
+        left: 0;
+    }
+}
 
 @media screen and (max-width: 768px) {
     /* ENTETE DU SITE */
@@ -270,4 +358,22 @@ header .contact-btn a:hover{
     #section-presentation h1{
         text-align: left;
     }
+
+    /* SECTION ONE */
+    #section-one .grid-section-one{
+        display: block;
+    }
+    #section-one .relative img:last-of-type{
+        width: 100%;
+        aspect-ratio: 1;
+        border: 12px solid var(--white);
+    }
+    #section-one .content-section-grid .ctn-btn{
+        text-align: center;
+    }
+
+   
+}
+
+@media screen and (max-width: 640px) {
 }
