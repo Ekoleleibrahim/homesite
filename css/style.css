@@ -22,6 +22,9 @@ img{
     width: 100%;
     object-fit: cover;
 }
+svg{
+    height: 32px;
+}
 a{
     display: inline-block;
     text-decoration: none;
@@ -341,7 +344,7 @@ header .title{
     margin-inline: auto;
 }
 #section-three header{
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 }
 #section-three header h1{
     text-align: center;
@@ -407,6 +410,12 @@ header .title{
     visibility: hidden;
     transition: all 300ms linear;
 }
+#section-three .grid-section-three article header {
+    text-align: center;
+}
+#section-three .grid-section-three article svg{
+    color: var(--white);
+}
 #section-three .grid-section-three article .text-content h2{
     color: var(--white);
 }
@@ -426,6 +435,63 @@ header .title{
     grid-row: 1/4;
 }
 
+/* SECTION FOR */
+#section-for{
+    padding: 100px 50px;
+    background-color: var(--white);
+}
+#section-for header{
+    margin-bottom: 50px;
+}
+#section-for header h1{
+    text-align: center;
+    color: var(--chocolat);
+}
+#section-for header p{
+    text-align: center;
+    color: var(--black);
+}
+#section-for header h1{
+    margin-bottom: 8px;
+}
+#section-for .grid-section-for{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+#section-for .grid-section-for article{
+    position: relative;
+}
+#section-for .grid-section-for article .absolute{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#section-for .grid-section-for article img{
+    aspect-ratio: 1/1;
+}
+#section-for .grid-section-for article .absolute > div{
+    background-color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+#section-for .grid-section-for .flex-section-for{
+    gap: 10px;
+    flex-wrap: wrap;
+}
+#section-for .grid-section-for .flex-section-for img{
+    width: 30%;
+    aspect-ratio: 2/2;
+}
 
 
 
@@ -596,6 +662,18 @@ header .title{
     #section-three .grid-section-three article:nth-child(4){
         grid-column: 2/3;
         grid-row: 2;
+    }
+
+    /* SECTION FOR */
+    #section-for{
+        padding-inline: 24px;
+    }
+    #section-for .grid-section-for{
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+    #section-for .grid-section-for div:nth-child(1){
+        order: 2;
     }
 }
 
